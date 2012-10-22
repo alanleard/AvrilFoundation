@@ -1,1 +1,0 @@
-/Users/criteriastudio/Documents/TITANIUM/AvrilFoundation/Resources/specs/views/twitter_news_row_spec.coffee

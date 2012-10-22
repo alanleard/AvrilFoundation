@@ -15,31 +15,45 @@ var VideoRow = function(args) {
     var row = Ti.UI.createTableViewRow({
 		height:160,
 		className:'videoRow',
-		layout:'vertical',
+    	height:Ti.UI.SIZE,
 		selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY
    });
+    
+    var bgView = Ti.UI.createView({
+    	top:10,
+    	right:20,
+    	left:20,
+    	borderWidth:5,
+    	borderColor:'#fff',
+    	backgroundColor:'#eee',
+    	height:Ti.UI.SIZE,
+		layout:'vertical',
+    });
     
     var label = Ti.UI.createLabel({
         top:5,
         textAlign:'center',
-        color:'#999',
+        color:'#333',
 		shadowColor:'#fff',
+		left:20, right:20,
 		shadowOffset:{x:0,y:1},
         font: {
-			fontSize:14, 
+			fontSize:'16dp', 
 		},           
    		text:args.title
    	});
     
     var img = Ti.UI.createImageView({
-        top:10,
+        top:15,
         width:120,height:90,
    		image: args.image
    	});
     
    
-    row.add(img);
-    row.add(label);
+    bgView.add(img);
+    bgView.add(label);
+    bgView.add(Ti.UI.createView({height: 15}));
+    row.add(bgView);
     
     row.url = args.url;
     row.youTubeTitle = args.title;
@@ -54,8 +68,9 @@ module.exports =  function(args){
 	var _tableView = Titanium.UI.createTableView({
 		width:Ti.UI.FILL, height:Ti.UI.FILL,
 		separatorColor:'transparent',
-		backgroundColor:'eee',
-		border:10
+		backgroundColor:'transparent',
+		border:10,
+		bottom:0
 	});
 	
 	var actInd = Ti.UI.createActivityIndicator({

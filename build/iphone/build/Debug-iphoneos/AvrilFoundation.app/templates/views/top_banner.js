@@ -1,1 +1,0 @@
-/Users/criteriastudio/Documents/TITANIUM/AvrilFoundation/Resources/templates/views/top_banner.js

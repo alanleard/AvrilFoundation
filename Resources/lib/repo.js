@@ -61,7 +61,19 @@ module.exports = (function() {
       }),
       
       getEvents = _apiCallFactory('events', function(finishCall){
-        FbGraph.getEventsOlderThan2Weeks(FB_PAGE, FB_ID, finishCall);
+      	// Fetch from RSS
+      	var rss = require('/lib/rss');
+      	
+      	rss.loadRssFeed({
+			success: function(data) {
+	    		finishCall(data);
+	    		
+	    		//masterView.refreshRssTable(data);
+	    	}
+		});
+      	
+        // Don't fetch from facebook
+        //FbGraph.getEventsOlderThan2Weeks(FB_PAGE, FB_ID, finishCall);
       }),
       
       getPages = _apiCallFactory('pages', function(finishCall){

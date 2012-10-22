@@ -12,10 +12,10 @@ var render = function() {
 
         donate_banner: topBanner.render().view,
 
-        shadow: BorderShadows({ top: 100 }).view,
+        shadow: BorderShadows({ top: 185 }).view,
 
         table: UI.createTableView({
-          top: 100,
+          top: 185,
           backgroundColor: 'transparent',
           style_id: 'list_table'
         })

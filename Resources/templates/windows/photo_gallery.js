@@ -3,7 +3,7 @@ var render = function() {
       Controller = nrequire('/templates/controllers/photo_gallery'),
       CroppedImage = nrequire('/ui/cropped_image'),
       BorderShadows = nrequire('/ui/border_shadows'),
-      photo_size = isIPad ? 340 : (Ti.Platform.displayCaps.platformWidth / 3);
+      photo_size = ( isIPad ? 340 : (Ti.Platform.displayCaps.platformWidth / 3) - 8);
       
   var YouTubePlaylist = require('/templates/views/YouTubePlaylist');
 
@@ -17,7 +17,7 @@ var render = function() {
         donate_banner: topBanner.render().view,
 
         shadow: BorderShadows({
-          top: 100
+          top: 185
         }).view,
 
         photo_upload_btn: UI.createButton({

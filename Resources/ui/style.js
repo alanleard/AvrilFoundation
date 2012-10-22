@@ -29,14 +29,14 @@ module.exports = {
 
     p3: {
       font: {fontSize: 12, fontWeight: 'regular'},
-      color: '#999999',
+      color: '#333333',
       height: Ti.UI.SIZE,
       width: Ti.UI.SIZE
     },
     
     p4: {
       font: {fontWeight: 'normal', fontFamily: 'Georgia', fontSize: 18, fontStyle: 'italic'},
-      color: "#707070",
+      color: "#333333",
       height: Ti.UI.SIZE,
       width: Ti.UI.SIZE
     },

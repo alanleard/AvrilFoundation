@@ -13,7 +13,7 @@ var render = function(event) {
         donate_banner: topBanner.render().view,
 
         shadow: BorderShadows({
-          top: 100
+          top: 185
         }).view,
 
         detail_view: Detail.render(event)

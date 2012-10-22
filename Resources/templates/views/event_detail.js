@@ -4,7 +4,7 @@ var render = function(event) {
   
   var self = {
         view: UI.createScrollView({
-          top: (isAndroid ? 100 : 136),
+          top: (isAndroid ? 100 : 215),
           contentHeight: 'auto',
           height: Ti.UI.FILL,
           width: Ti.UI.FILL,
@@ -54,9 +54,10 @@ var render = function(event) {
           style_id: 'p3'
         }),
         
+        // Remove all the HTML tags here
         description: UI.createLabel({
           top: 5,
-          text: event.description,
+          text: event.description.replace(/(<([^>]+)>)/ig,""),
           color: "black",
           width: Ti.UI.SIZE,
           height: Ti.UI.SIZE,
@@ -68,9 +69,9 @@ var render = function(event) {
   self.view.add(self.cal_view);
   self.content_view.add(self.title);
   self.content_view.add(self.time);
-  self.content_view.add(self.location);
+  //self.content_view.add(self.location);
   self.content_view.add(self.description);
-  self.content_view.add(self.image);
+  //self.content_view.add(self.image);
   self.view.add(self.content_view);
 
   return self;

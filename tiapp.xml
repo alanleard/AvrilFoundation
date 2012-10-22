@@ -3,7 +3,6 @@
     <property name="acs-oauth-secret-production" type="string">18O0mMH4Qza0Dqlu2JVLqiNGzFYySJet</property>
     <property name="acs-oauth-key-production" type="string">EwUX5FfqhIHxcvqmtRmr2J8p6UdQD0Be</property>
     <property name="acs-api-key-production" type="string">ijnNqEjp7hNhfUTMvOUauFnJoNJipwN7</property>
-    
     <property name="acs-oauth-secret-development" type="string">eQYCIGDeIAHYS9DxK1LKNt8I7uxVHWpL</property>
     <property name="acs-oauth-key-development" type="string">OHI1EjO34cOpKzDVhK0JwPHH93afLuN5</property>
     <property name="acs-api-key-development" type="string">UYv8bXnzPDys4FQTuMTpOnKOk0F8anpT</property>
@@ -22,9 +21,9 @@
     <url>http://</url>
     <description>not specified</description>
     <copyright>2012 by criteriastudio</copyright>
-    <icon>appicon.png</icon>
+    <icon>Icon.png</icon>
     <persistent-wifi>false</persistent-wifi>
-    <prerendered-icon>false</prerendered-icon>
+    <prerendered-icon>true</prerendered-icon>
     <statusbar-style>default</statusbar-style>
     <statusbar-hidden>false</statusbar-hidden>
     <fullscreen>false</fullscreen>

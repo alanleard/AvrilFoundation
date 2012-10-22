@@ -1,1 +1,0 @@
-/Users/criteriastudio/Documents/TITANIUM/AvrilFoundation/Resources/ui/split_view.js

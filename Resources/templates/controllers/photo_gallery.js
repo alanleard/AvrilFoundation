@@ -10,6 +10,7 @@ module.exports = function(view) {
       local_photos = [],
       
       openSlideShow = function(e) {
+      	
         if(e.source.index === 'undefined' || e.source.index === null) return;
         var slideshow = Slideshow.render(slideshow_urls, e.source.index);
         Application.photos.open(slideshow.win);
@@ -40,13 +41,17 @@ module.exports = function(view) {
       	
         squares = cloud_photos.map(view.makeImageViewFromCloudPhoto);
 
+        // view.photo_grid = Grid({top: 0},
+                               // {left_padding: 10, top_padding: 10},
+                               // squares.concat(view.photo_upload_btn));
+
         view.photo_grid = Grid({top: 0},
-                               {left_padding: 2, top_padding: 2},
-                               squares.concat(view.photo_upload_btn));
+                               {left_padding: 10, top_padding: 10},
+                               squares);
 
 		
 		  var scrollable = Ti.UI.createScrollableView({
-		  	top:100,
+		  	top:150,
 		  	views:[view.photo_grid, view.video_view],
 		  	showPagingControl:false
 		  });
@@ -139,7 +144,7 @@ function CustomTabbedBar(){
 	var view = Ti.UI.createView({
 		height:h,
 		zIndex:99,
-		bottom:0
+		top:100
 	});
 	
 	var btn1 = Ti.UI.createLabel({

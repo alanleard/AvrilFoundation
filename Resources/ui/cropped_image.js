@@ -12,7 +12,19 @@ module.exports = function(props) {
         image: props.image,
         index: props.index
       });
-
+	
+	view.left = 5;
+	view.top = 5;
+	// view.backgroundImage = '/images/shadow/screen_tablet_shadow_full.png';
+	view.backgroundColor = '#fff';
+	
+	var border = Ti.UI.createView({
+		borderWidth:5,
+		borderColor:'#fff',
+		zIndex:99,
+		touchEnabled:false
+      });
+	
   if(isAndroid) {
     image.width = props.width;
     image.height = props.height;
@@ -22,6 +34,7 @@ module.exports = function(props) {
   view.add(scroller);
   view.add(click_blocker);
   view.image = image;
+  view.add(border);
 
   return view;
 };

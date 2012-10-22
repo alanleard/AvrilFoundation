@@ -14,7 +14,7 @@ var data = [
 module.exports = function(){
 
     var win = Titanium.UI.createWindow({ 
-        backgroundColor:'#333',     
+        backgroundImage: '/images/backgrounds/main_bg.png',
         title: 'Donate!',
         barColor:'#333',
         backgroundColor:'#666'

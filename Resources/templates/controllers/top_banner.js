@@ -1,10 +1,16 @@
+
+var DonateWindow = require('/templates/windows/DonateWindow');
+
 module.exports = function(view) {
   var Repo = nrequire('/lib/repo');
       
   var url = 'http://www.doctorswithoutborders.com/',
   
       openDonateLink = function() {
-        Ti.Platform.openURL(url);
+//        Ti.Platform.openURL(url);
+		var modal = new DonateWindow();
+		
+		modal.open({modal:true});
       },
   
       updateTopbarMessage = function(val) {

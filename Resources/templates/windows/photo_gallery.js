@@ -4,6 +4,8 @@ var render = function() {
       CroppedImage = nrequire('/ui/cropped_image'),
       BorderShadows = nrequire('/ui/border_shadows'),
       photo_size = isIPad ? 340 : (Ti.Platform.displayCaps.platformWidth / 3);
+      
+  var YouTubePlaylist = require('/templates/views/YouTubePlaylist');
 
   var self = {
         win: UI.createWindow({
@@ -25,11 +27,14 @@ var render = function() {
           backgroundImage: '/images/buttons/photo_grid_add_btn_sml.png',
           backgroundSelectedImage: '/images/buttons/photo_grid_add_btn_sml_p.png',
           style_id: 'photo_upload_button'
-        })
+        }),
+        
+        video_view: new YouTubePlaylist({ })
       };
   
   self.win.add(self.donate_banner);
   self.win.add(self.shadow);
+  
   
   self.makeImageViewFromCloudPhoto = function(cloud_photo, index) {
     return CroppedImage({

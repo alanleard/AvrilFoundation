@@ -18,9 +18,17 @@ module.exports = function(view) {
       },
 
       setPage = function(page) {
-        setImage(page.photo.urls.medium_640);
-        setTitle(page.title);
-        setContent(page.content);
+      	try{
+	      	if(page.photo){
+		      	if(page.photo.urls){
+		        setImage(page.photo.urls.medium_640);
+		        setTitle(page.title);
+		        setContent(page.content);
+		       }
+		      }
+		 }catch(err){
+		 	
+		 }
       },
   
       updateSubMenu = function(idx) {

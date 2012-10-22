@@ -35,13 +35,22 @@ module.exports = function(view) {
       },
       
       makeGrid = function(cloud_photos) {
+      	
         squares = cloud_photos.map(view.makeImageViewFromCloudPhoto);
 
-        view.photo_grid = Grid({top: 100},
+        view.photo_grid = Grid({top: 0},
                                {left_padding: 2, top_padding: 2},
                                squares.concat(view.photo_upload_btn));
-    
-        view.win.add(view.photo_grid);
+
+		
+		  var scrollable = Ti.UI.createScrollableView({
+		  	top:100,
+		  	views:[view.photo_grid, view.video_view],
+		  	showPagingControl:true
+		  });
+		  
+
+        view.win.add(scrollable);
         view.photo_grid.addEventListener('click', openSlideShow);
       },
 

@@ -9,13 +9,13 @@ module.exports = (function() {
         tab_group: Ti.UI.createTabGroup({}),
       
         events: UI.createTab({
-          title: 'Events',
+          title: 'News',
           icon:'/images/icons/tab_cal.png',
           window: eventsWin().win
         }),
 
         news: UI.createTab({
-          title: 'News',
+          title: 'Social',
           icon:'/images/icons/tab_newsfeed.png',
           window: newsWin().win
         }),
@@ -27,7 +27,7 @@ module.exports = (function() {
         }),
         
         about: UI.createTab({
-          title: 'About Us',
+          title: 'The Foundation',
           icon:'/images/icons/tab_about.png',
           window: aboutWin().win
         }),

@@ -1,2 +1,6 @@
 tmp
 build/
+build/iphone/build/AvrilFoundation.build/Debug-iphonesimulator/AvrilFoundation-universal.build/AvrilFoundation-universal.dep
+build/iphone/build/AvrilFoundation.build/Debug-iphonesimulator/AvrilFoundation-universal.build/build-state.dat
+build/iphone/build/build.log
+build/iphone/build/Debug-iphonesimulator/AvrilFoundation.app/AvrilFoundation

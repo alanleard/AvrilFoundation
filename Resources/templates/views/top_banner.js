@@ -6,12 +6,12 @@ var render = function() {
           style_id: 'top_banner',
           top: 0,
           width: 320,
-          height: 100,
+          height: 185,
           backgroundImage: '/images/backgrounds/logo_donate_bar_mobile_bg.png'
         }),
     
         title_message: UI.createLabel({
-          text: '"Doctors Without Borders/Médecins Sans Frontières (MSF) is a medical humanitarian organization assisting people in nearly 70 countries."',
+          text: 'The Avril Lavigne Foundation R.O.C.K.S. Respect, Opportunity, Choices, Knowledge, and Strength in support of children and youth living with serious illnesses or disabilities.',
           top: 25,
           font: {fontWeight: 'normal', fontFamily: 'Georgia', fontSize: 15, fontStyle: 'italic'},
           color: "#707070",
@@ -36,8 +36,8 @@ var render = function() {
         })
       };
  
-  self.view.add(self.logo);
-  self.view.add(self.donate_button);
+  // self.view.add(self.logo);
+  // self.view.add(self.donate_button);
 
   if(isIPad) { self.view.add(self.title_message); }
   

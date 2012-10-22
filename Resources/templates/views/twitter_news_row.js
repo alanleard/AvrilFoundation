@@ -5,7 +5,7 @@ var render = function(news) {
   var self = {
         row: UI.createTableViewRow({
           created: DateFormatter.date(news.created_at, {parsed: true}),
-          backgroundColor: 'transparent',
+          backgroundImage: '/images/gallery_background.png',
           news: news,
           kind: news.kind,
           className: 'twitter',

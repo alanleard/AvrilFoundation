@@ -51,9 +51,10 @@ module.exports = function(view) {
 
 		
 		  var scrollable = Ti.UI.createScrollableView({
-		  	top:150,
+		  	top:185+30,
 		  	views:[view.photo_grid, view.video_view],
-		  	showPagingControl:false
+		  	showPagingControl:false,
+		  	backgroundImage:'/images/gallery_background.png'
 		  });
 		  
 		  var tabbed = new CustomTabbedBar();
@@ -137,14 +138,14 @@ function CustomTabbedBar(){
 	
 	var h = 30;
 	
-	var colorSelected = '#999',
-		colorUnselected = '#333',
-		buttonFont = {fontSize:16, fontFamily:'chalkduster'};
+	var colorSelected = '#c1018d',
+		colorUnselected = '#ff60d4',
+		buttonFont = {fontSize:16};
 	
 	var view = Ti.UI.createView({
 		height:h,
 		zIndex:99,
-		top:100
+		top:185
 	});
 	
 	var btn1 = Ti.UI.createLabel({

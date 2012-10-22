@@ -17,7 +17,7 @@ var render = function() {
         donate_banner: topBanner.render().view,
 
         shadow: BorderShadows({
-          top: 100
+          top: 185
         }).view,
 
         photo_upload_btn: UI.createButton({

@@ -20,9 +20,12 @@ module.exports = function(view) {
           return VIEW_TYPES[n.kind].row.render(n).row;
         });
       },
-  
+  		
+  		
+  		
       refreshNews = function(endPullToRefresh) {
         Repo.getNews(function(news) {
+        	Ti.API.info(news);
           fillTable(makeNewsRows(news));
           endPullToRefresh();
         }, {force_refresh: true});
@@ -39,6 +42,11 @@ module.exports = function(view) {
           });
         }
       },
+      toggleNews = function(){
+      	Repo.getNews(function(news) {
+          fillTable(makeNewsRows(news));
+        }, {force_refresh: true});
+      },
       
       shouldOpenDetail = function(source) {
         return (source && source.id) != "twitter_action";
@@ -50,6 +58,19 @@ module.exports = function(view) {
           Application.news.open(detail.win);          
         }
       };
+      
+       view.foundationFeed.addEventListener('click',function(){
+		  	FB_PAGE = foundation_Page; // for page retrieval
+			FB_ID = foundation_ID;
+			TWITTER_SCREEN_NAME = foundation_Twitter;
+			toggleNews();
+		  });
+		  view.avrilFeed.addEventListener('click',function(){
+		  	FB_PAGE = avril_Page; // for page retrieval
+			FB_ID = avril_ID;
+			TWITTER_SCREEN_NAME = avril_Twitter;
+			toggleNews();
+		  });
   
   view.win.addEventListener('focus', populatePage);
   if(!isIPad) view.table.addEventListener('click', openDetail);

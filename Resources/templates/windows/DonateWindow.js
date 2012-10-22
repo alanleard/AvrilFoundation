@@ -72,16 +72,16 @@ function Row(item){
 		right:20,
 		left:20,
 		backgroundColor:'#fff',
-		borderColor:'#333',
-		borderRadius:10
+		borderColor:'#eed',
+		borderWidth:5
 	});
 	
 	var title = Ti.UI.createLabel({
 		top:5,
-		left:5, right:5,
+		left:15, right:15,
 		height:Ti.UI.SIZE,
-		text:item.title,
-		font:{fontFamily:'chalkduster', fontSize:'16dp'},
+		text: '\n' + item.title+'\n ',
+		font:{fontSize:'14dp', fontWeight:'bold'},
 		textAlign:'center'
 	});
 	

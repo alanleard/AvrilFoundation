@@ -23,7 +23,7 @@
     <copyright>2012 by criteriastudio</copyright>
     <icon>Icon.png</icon>
     <persistent-wifi>false</persistent-wifi>
-    <prerendered-icon>false</prerendered-icon>
+    <prerendered-icon>true</prerendered-icon>
     <statusbar-style>default</statusbar-style>
     <statusbar-hidden>false</statusbar-hidden>
     <fullscreen>false</fullscreen>

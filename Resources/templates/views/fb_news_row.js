@@ -6,7 +6,7 @@ var render = function(news) {
         row: UI.createTableViewRow({
           created: DateFormatter.date(news.created_time, {parsed: true, fb: true}),
           news: news,
-          backgroundColor: 'transparent',
+          backgroundImage: '/images/gallery_background.png',
           kind: news.kind,
           style_id: 'news_row',
           className: (news.picture ? 'facebook-pic' : 'facebook-nopic')

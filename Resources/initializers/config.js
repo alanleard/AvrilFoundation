@@ -4,7 +4,7 @@ var PropertyCache = nrequire('/lib/property_cache'),
     Twitter = nrequire('/lib/twitter');
 
 // Cache time for each call in Repo.js and whatever you choose to add.
-PropertyCache.setup({cache_time: 600000});
+PropertyCache.setup({cache_time: 1000});
 
 // Generic Admin user on ACS for making destructive calls with.  Create on ACS you haven't.
 ACS_ADMIN_CREDENTIALS = {login: 'admin', password: '4vr1l'};
@@ -12,9 +12,19 @@ ACS_ADMIN_CREDENTIALS = {login: 'admin', password: '4vr1l'};
 // FB SETUP
 Ti.Facebook.appid = "454480297929219";
 Ti.Facebook.permissions = ['publish_stream', 'read_stream', 'offline_access'];
-FB_PAGE = 'msf.english'; // for page retrieval
-FB_ID = '33110852384'; // real fb id for fql calls. You can find out by inspecting fb links
+
+foundation_Page = 'theavrillavignefoundation';
+foundation_ID = '104849962899254';
+
+avril_Page = 'avrillavigne';
+avril_ID = '5413509299';
+
+avril_Twitter = 'AvrilLavigne';
+foundation_Twitter = 'AvrilFoundation';
+
+FB_PAGE = foundation_Page; // for page retrieval
+FB_ID = avril_ID; // real fb id for fql calls. You can find out by inspecting fb links
 
 // TWITTER SETUP
-TWITTER_SCREEN_NAME = 'MSF_USA'; // For page link and tweet @
+TWITTER_SCREEN_NAME = foundation_Twitter; // For page link and tweet @
 Twitter.setup({consumerKey: "vmE9f6GtDLRYkh5aytSww", consumerSecret: "mQR4XfZGbQPyKoblElpXUF90fKzKSlWhR5me4ND0jEQ"});

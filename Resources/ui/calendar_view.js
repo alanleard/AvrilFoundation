@@ -14,7 +14,7 @@ module.exports = function(event) {
         backgroundImage: '/images/icons/events_calendar.png',
         height: 55,
         width: 50,
-        left: 10,
+        left: 8,
         square: true
       }),
 
@@ -22,7 +22,7 @@ module.exports = function(event) {
         text: DateFormatter.date(event.start_time, {month: true}),
         top: 2,
         height: Ti.UI.SIZE,
-        color:"#515151",
+        color:"#ffffff",
         font: {
           fontFamily: 'Helvetica Neue',
           fontSize: 10

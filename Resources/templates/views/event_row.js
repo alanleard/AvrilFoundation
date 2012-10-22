@@ -2,15 +2,14 @@ var render = function(event) {
   var DateFormatter = nrequire('/lib/date_formatter'),
       CalendarView = nrequire('/ui/calendar_view');
   
-	Titanium.API.info(event.start_time);
-  
-   
+    
   var self = {
         row: UI.createTableViewRow({
           start_time: event.start_time,
           layout: 'horizontal',
           event: event,
-          className: 'event'
+          className: 'event',
+       	  backgroundImage: "/images/backgrounds/events_tableview_row_background.png",
         }),
 
         cal_view: CalendarView(event),
@@ -28,7 +27,7 @@ var render = function(event) {
         title: UI.createLabel({
           text: event.title,
           color: '#667dad',
-          left: 0,
+          left: 5,
           height: Ti.UI.SIZE,
           width: Ti.UI.SIZE,
           style_id: 'h3'
@@ -36,7 +35,7 @@ var render = function(event) {
     
         time: UI.createLabel({
           top: 5,
-          left: 0,
+          left: 5,
           color: "#444444",
           text: DateFormatter.date(event.start_time, {to_date: true, formatted: true}),
           width: Ti.UI.SIZE,

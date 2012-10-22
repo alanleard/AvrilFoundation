@@ -30,6 +30,7 @@ module.exports = function(view) {
         });
       };
 
-  view.donate_button.addEventListener('click', openDonateLink);
+  //view.donate_button.addEventListener('click', openDonateLink);
+  view.view.addEventListener('click', openDonateLink);
   pullAcsInfo();
 };

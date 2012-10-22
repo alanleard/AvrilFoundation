@@ -1,1 +1,0 @@
-/Users/criteriastudio/Documents/TITANIUM/AvrilFoundation/Resources/lib/jsOAuth-1.3.1.js

@@ -1,0 +1,1 @@
+/Users/criteriastudio/Documents/TITANIUM/AvrilFoundation/Resources/specs/views/top_banner_spec.coffee

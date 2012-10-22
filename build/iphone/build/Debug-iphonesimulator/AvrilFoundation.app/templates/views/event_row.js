@@ -1,0 +1,1 @@
+/Users/criteriastudio/Documents/TITANIUM/AvrilFoundation/Resources/templates/views/event_row.js

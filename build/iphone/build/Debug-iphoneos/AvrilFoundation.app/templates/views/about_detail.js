@@ -1,0 +1,1 @@
+/Users/criteriastudio/Documents/TITANIUM/AvrilFoundation/Resources/templates/views/about_detail.js

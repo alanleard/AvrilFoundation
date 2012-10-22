@@ -1,0 +1,1 @@
+/Users/criteriastudio/Documents/TITANIUM/AvrilFoundation/Resources/specs/windows/tweet_spec.coffee

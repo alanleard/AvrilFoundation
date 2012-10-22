@@ -1,0 +1,1 @@
+/Users/criteriastudio/Documents/TITANIUM/AvrilFoundation/Resources/templates/controllers/photo_gallery.js

@@ -25,8 +25,10 @@ module.exports = function(view) {
         if(!view.photo_grid) { return; }
         if(isAndroid) { clearImagePropertiesForAndroidMemory(); }
         view.win.remove(view.photo_grid);
+        view.win.remove(view.scrollable);
         squares = null;
         view.photo_grid = null;
+        view.scrollable = null;
       },
       
       storeState = function(cloud_photos) {
@@ -46,9 +48,22 @@ module.exports = function(view) {
 		  var scrollable = Ti.UI.createScrollableView({
 		  	top:100,
 		  	views:[view.photo_grid, view.video_view],
-		  	showPagingControl:true
+		  	showPagingControl:false
 		  });
 		  
+		  var tabbed = new CustomTabbedBar();
+		  
+		  tabbed.addEventListener('change', function(e){
+		  		scrollable.scrollToView(e.index);
+		  });
+		  
+		  view.win.add(tabbed);
+		  
+		scrollable.addEventListener('scroll', function(e) {
+			tabbed.SetSelected(e.currentPage);
+		});
+		
+		view.scrollable = scrollable;
 
         view.win.add(scrollable);
         view.photo_grid.addEventListener('click', openSlideShow);
@@ -112,3 +127,72 @@ module.exports = function(view) {
 
   view.win.addEventListener('focus', populatePage);
 };
+
+function CustomTabbedBar(){
+	
+	var h = 30;
+	
+	var colorSelected = '#999',
+		colorUnselected = '#333',
+		buttonFont = {fontSize:16, fontFamily:'chalkduster'};
+	
+	var view = Ti.UI.createView({
+		height:h,
+		zIndex:99,
+		bottom:0
+	});
+	
+	var btn1 = Ti.UI.createLabel({
+		width:'50%',
+		text:'Photos',
+		textAlign:'center',
+		color:'#fff',
+		font:buttonFont,
+		left:0,
+		height:h,
+		backgroundColor:colorSelected
+	});
+	var btn2 = Ti.UI.createLabel({
+		width:'50%',
+		text:'Videos',
+		textAlign:'center',
+		color:'#fff',
+		font:buttonFont,
+		right:0,
+		height:h,
+		backgroundColor:colorUnselected
+	});
+	
+	view.add(btn1);
+	view.add(btn2);
+	
+	btn1.addEventListener('click', function(){
+		setSelected(0);
+		view.fireEvent('change', {index:0});
+	});
+	
+	btn2.addEventListener('click', function(){
+		setSelected(1);
+		view.fireEvent('change', {index:1});
+	});
+	
+	view.SetSelected = function(index){
+		setSelected(index);
+	}
+	
+	function setSelected(index){
+		if(index === 0 ){
+			btn1.backgroundColor = colorSelected;
+			btn2.backgroundColor = colorUnselected;
+		}else{
+			btn2.backgroundColor = colorSelected;
+			btn1.backgroundColor = colorUnselected;
+		}
+	}
+	
+	return view;
+	
+	
+}
+
+

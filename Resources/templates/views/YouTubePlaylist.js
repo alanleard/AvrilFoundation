@@ -22,11 +22,13 @@ var VideoRow = function(args) {
     var label = Ti.UI.createLabel({
         top:5,
         textAlign:'center',
-        color:'#999',
+        color:'#333',
 		shadowColor:'#fff',
+		left:20, right:20,
 		shadowOffset:{x:0,y:1},
         font: {
-			fontSize:14, 
+			fontSize:'16dp', 
+			fontFamily:'chalkduster'
 		},           
    		text:args.title
    	});
@@ -55,7 +57,8 @@ module.exports =  function(args){
 		width:Ti.UI.FILL, height:Ti.UI.FILL,
 		separatorColor:'transparent',
 		backgroundColor:'eee',
-		border:10
+		border:10,
+		bottom:30
 	});
 	
 	var actInd = Ti.UI.createActivityIndicator({
